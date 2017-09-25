@@ -33,7 +33,9 @@ function getMinMax(str) {
  * @return {number} число под номером х
  */
 function fibonacciSimple(x) {
-  return x;
+	if (x === 0) { return 0; }
+  if (x === 1) { return 1; }
+  return fibonacciSimple(x-2) + fibonacciSimple(x-1);
 }
 
 /* ============================================= */
