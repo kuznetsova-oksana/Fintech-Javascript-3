@@ -33,8 +33,8 @@ function getMinMax(str) {
  * @return {number} число под номером х
  */
 function fibonacciSimple(x) {
-	if (x === 0) { return 0; }
-  if (x === 1) { return 1; }
+	if (x === 0) return 0;
+  if (x === 1) return 1;
   return fibonacciSimple(x-2) + fibonacciSimple(x-1);
 }
 
@@ -75,7 +75,23 @@ function fibonacciWithCache(x) {
  * @return {string}
  */
 function printNumbers(max, cols) {
-
+  const rows = Math.ceil((max + 1) / cols);
+  let output = '';
+  let nextNum = 0;
+  for (let i = 0; i < rows; i++) {
+    nextNum = i;
+    for (let j = 0; j < cols; j++) {
+      let spacesBefore = String(nextNum).length === 1 ? ' ' : '';
+      let spacesAfter = (j === cols - 1 || nextNum === max) ? '' : ' ';
+      output = output + spacesBefore + nextNum + spacesAfter;
+      nextNum += rows; 
+      if (nextNum > max) break;
+    }
+    if (i !== (rows - 1)) {
+      output += '\n'
+    }
+  }
+    return output;
 }
 
 /* ============================================= */
