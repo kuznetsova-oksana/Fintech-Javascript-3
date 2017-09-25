@@ -4,26 +4,26 @@
  * @return {{min: number, max: number}} объект с минимумом и максимумом
  * '1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028' => { min: -1028, max: 15 }
  */
-function getMinMax(str) {
-	let max, min;
-  while (str !== "") {
-  	const newNum = parseFloat(str);
+function getMinMax(string) {
+  let max;
+  let min;
+  let str = string;
+
+  while (str !== '') {
+    const newNum = parseFloat(str);
+    const newNumLength = String(newNum).length;
+
     if (isNaN(newNum)) {
-      str = str.substr(1, str.length-1);
-      continue;
+      str = str.substr(1, str.length - 1);
+    } else {
+      max = (max === undefined || newNum > max) ? newNum : max;
+      min = (min === undefined || newNum < min) ? newNum : min;
+      str = str.substr(newNumLength, str.length - newNumLength);
     }
-  	if (max === undefined || newNum > max) {
-  		max = newNum;
-  	} 
-  	if (min === undefined || newNum < min) {
-			min = newNum;
-  	}
-  	let newNumLength = String(newNum).length;
-  	let strLength = str.length;
-  	str = str.substr(newNumLength, strLength-newNumLength);
   }
-  return { max: max, min: min };
+  return { max, min };
 }
+
 
 /* ============================================= */
 
@@ -33,9 +33,9 @@ function getMinMax(str) {
  * @return {number} число под номером х
  */
 function fibonacciSimple(x) {
-	if (x === 0) return 0;
-  if (x === 1) return 1;
-  return fibonacciSimple(x-2) + fibonacciSimple(x-1);
+  if (x === 0) { return 0; }
+  if (x === 1) { return 1; }
+  return fibonacciSimple(x - 2) + fibonacciSimple(x - 1);
 }
 
 /* ============================================= */
@@ -47,13 +47,15 @@ function fibonacciSimple(x) {
  * @return {number} число под номером х
  */
 function fibonacciWithCache(x) {
-  let cache = [0, 1];
-  const fibonacci = (n) => {
+  const cache = [0, 1];
+
+  const fibonacci = n => {
     if (cache[n] === undefined) {
-      cache[n] = fibonacci(n-1) + fibonacci(n-2);
+      cache[n] = fibonacci(n - 1) + fibonacci(n - 2);
     }
     return cache[n];
-  }
+  };
+
   return fibonacci(x);
 }
 
@@ -78,20 +80,21 @@ function printNumbers(max, cols) {
   const rows = Math.ceil((max + 1) / cols);
   let output = '';
   let nextNum = 0;
+
   for (let i = 0; i < rows; i++) {
     nextNum = i;
-    for (let j = 0; j < cols; j++) {
-      let spacesBefore = String(nextNum).length === 1 ? ' ' : '';
-      let spacesAfter = (j === cols - 1 || nextNum === max) ? '' : ' ';
+    for (let j = 0; j < cols && nextNum <= max; j++) {
+      const spacesBefore = String(nextNum).length === 1 ? ' ' : '';
+      const spacesAfter = (j === cols - 1 || nextNum === max) ? '' : ' ';
+
       output = output + spacesBefore + nextNum + spacesAfter;
-      nextNum += rows; 
-      if (nextNum > max) break;
+      nextNum += rows;
     }
     if (i !== (rows - 1)) {
-      output += '\n'
+      output += '\n';
     }
   }
-    return output;
+  return output;
 }
 
 /* ============================================= */
@@ -101,16 +104,16 @@ function printNumbers(max, cols) {
  * @param  {string} value
  * @return {string}
  */
-function rle(input) {
-  let output = "";
-  const inputLength = input.length;
+function rle(value) {
+  let output = '';
+  const inputLength = value.length;
+
   for (let i = 0; i < inputLength;) {
-    let curChar = input.charAt(i);
-    let counter = 1; 
-    for (let j = i + 1; j < inputLength; j++) {
-      if (curChar == input.charAt(j)) {
-        counter++;
-      } else break;
+    const curChar = value.charAt(i);
+    let counter = 1;
+
+    for (let j = i + 1; j < inputLength && curChar === value.charAt(j); j++) {
+      counter += 1;
     }
     output += curChar;
     if (counter > 1) {
