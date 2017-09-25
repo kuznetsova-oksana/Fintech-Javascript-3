@@ -49,7 +49,7 @@ function fibonacciSimple(x) {
 function fibonacciWithCache(x) {
   let cache = [0, 1];
   const fibonacci = (n) => {
-    if (cache[n] === undefined){
+    if (cache[n] === undefined) {
       cache[n] = fibonacci(n-1) + fibonacci(n-2);
     }
     return cache[n];
@@ -86,7 +86,23 @@ function printNumbers(max, cols) {
  * @return {string}
  */
 function rle(input) {
-
+  let output = "";
+  const inputLength = input.length;
+  for (let i = 0; i < inputLength;) {
+    let curChar = input.charAt(i);
+    let counter = 1; 
+    for (let j = i + 1; j < inputLength; j++) {
+      if (curChar == input.charAt(j)) {
+        counter++;
+      } else break;
+    }
+    output += curChar;
+    if (counter > 1) {
+      output += counter;
+    }
+    i += counter;
+  }
+  return output;
 }
 
 module.exports = {
