@@ -10,8 +10,8 @@ function promiseAll(promises) {
   let count = 0;
 
   return new Promise((resolve, reject) => {
-    promises.forEach((p, index) => {
-      p.then(result => {
+    promises.forEach((promise, index) => {
+      promise.then(result => {
         results[index] = result;
         count += 1;
         if (count === promises.length) {
