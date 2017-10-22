@@ -1,1 +1,24 @@
-a { color: #fff; }
+h1 {
+  font-family: "Comic Sans MS";
+  color: darkblue;
+}
+
+p {
+  font-family: "Comic Sans MS";
+  font-size: large;
+}
+
+img {
+  margin: auto;
+  width: 30%;
+  border: 3px solid darkblue;
+}
+
+ul {
+  margin: auto;
+}
+
+li {
+  font-family: "Comic Sans MS";
+  font-size: large;
+}

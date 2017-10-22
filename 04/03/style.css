@@ -1,0 +1,22 @@
+li { display: block; }
+
+ol { counter-reset: item; }
+
+ol li::before {
+  display: inline-block;
+  content: counter(item) ".";
+  counter-increment: item;
+  color: blue;
+  width: 1em;
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  text-align: right;
+}
+
+ul > li::before {
+  display: inline-block;
+  content: "•";
+  color: green;
+  width: 1em;
+  margin-left: -1em;
+}
