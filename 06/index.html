@@ -2,28 +2,76 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet/less" type="text/css" href="./main.less" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js" ></script>
-    <title>Задание 6.1</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">
+    <link rel="stylesheet" href="main.less">
+    <title>Задание 6</title>
 </head>
 <body>
-<h1>Сверстать полную страницу (без футера).</h1>
-<h4>Макеты:</h4>
-<ul>
-    <li><a href="https://app.zeplin.io/project/58a307271a9f6d513890adc8/screen/58a307604687f0394b3ba039">Desktop 1</a></li>
-    <li><a href="https://app.zeplin.io/project/58a307271a9f6d513890adc8/screen/58a3075a4ec334e848d7f333">Desktop 2</a></li>
-    <li><a href="https://app.zeplin.io/project/58a307271a9f6d513890adc8/screen/58a3076d2fc6273f38fc51c5">Mobile 1</a></li>
+<nav class="menu">
+  <ul class="menu-list">
+    <div class="menu-container">  
+        <li class="menu-item">
+            <a href="#" class="menu-link">карты</a>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="menu-link">вклады</a>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="menu-link">платежи и переводы</a>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="menu-link">бонусы</a>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="menu-link">страхование</a>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="menu-link">о банке</a>
+        </li>
+    </div>
 </ul>
-<h4>Особенности:</h4>
-<ul>
-    <li>Брейкпойнт для мобильной: 640px</li>
-    <li>До брейкпойнта верстка ломаться не должна, если ломается и никак иначе не избежать, ввести промежуточный брейкпойнт.</li>
-    <li>Использоваться БЭМ-нэйминг для классов.</li>
-    <li>Использовать less.</li>
-    <li>Повторяющиеся размера, цвета вынести в переменные.</li>
-    <li>Для элементов, у которых могут меняться состояние (цвет текста, бордер, фон, размер, позиция и тп), добавить transition.</li>
-    <li>Тултип также должен появляться с анимацией.</li>
-    <li>Для иконок использовать svg.</li>
-</ul>
+
+<div class="banner">
+    <div class="banner-container">
+       <div class="banner-content">
+            <h1 class="banner-title">Карты для вас прямо сейчас</h1>
+            <p class="banner-subtitle">Выбирайте карту, пользуйтесь <br>удобными сервисами</p>
+            <button class="banner-button">Оформить заявку</button>
+        </div>   
+    </div>
+</div>
+<h2 class="header_tags">Любые категории платежей</h2>
+<div class="tags-container">
+    <div class="tag">
+        <div class="tag-name">Кафе</div>
+        <button class="close-tag" title="Удалить" type="button">Удалить</button>
+    </div>
+    <div class="tag">
+        <div class="tag-name">Интернет</div>
+        <button class="close-tag" title="Удалить" type="button">Удалить</button>
+    </div>
+    <div class="tag">
+        <div class="tag-name">Телефон</div>
+        <button class="close-tag" title="Удалить" type="button">Удалить</button>
+    </div>
+    <div class="tag">
+        <div class="tag-name">Авто</div>
+        <button class="close-tag" title="Удалить" type="button">Удалить</button>
+    </div>
+    <div class="tag">
+        <div class="tag-name">ЖКХ</div>
+        <button class="close-tag" title="Удалить" type="button">Удалить</button>
+    </div>
+    <div class="tag">
+        <div class="tag-name">Одежда и обувь</div>
+        <button class="close-tag" title="Удалить" type="button">Удалить</button>
+    </div>
+    <div class="tag">
+        <div class="tag-name">Супермаркеты, гастрономы, универмаги и продукты</div>
+        <button class="close-tag" title="Удалить" type="button">Удалить</button>
+    </div>
+    <div class="tag-input" contenteditable="true"></div>
+</div>
+</nav>
 </body>
 </html>
