@@ -1,0 +1,64 @@
+.main-container {
+  display: flex;
+  width: 1080px;
+  height: 405px;
+  background-image: linear-gradient(to right, #1489e7, #003e82);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 90px;
+  padding-left: 15px;
+}
+
+.img-container {
+  right: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cards {
+  margin-left: -35px;
+  margin-top: -87px;
+}
+
+.main-text {
+  width: 342px;
+  height: 100px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 50px;
+  font-weight: 100;
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 17px;
+}
+
+.text {
+  width: 326px;
+  height: 48px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  word-spacing: -2px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.button {
+  width: 212px;
+  height: 62px;
+  border-radius: 6px;
+  background-color: #ffdd2d;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  word-spacing: -1px;
+  line-height: 1.41;
+  text-align: center;
+  color: #333;
+}
