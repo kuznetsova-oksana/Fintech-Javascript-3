@@ -9,10 +9,15 @@
 .menu-list {
   padding-left: 125px;
   padding-top: 25px;
+list-style-type: none;
+}
+
+.menu-container {
+  display: flex;
+  flex: row;
 }
 
 .menu-item {
-  display: inline;
   margin-right: 64px;
 }
 
